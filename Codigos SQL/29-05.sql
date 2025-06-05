@@ -265,3 +265,62 @@ INSERT INTO detalle_ventas (
 (
     2, 1, 1, 749990, 1, 1
 );
+
+
+INSERT INTO usuarios (id, nombre, correo, tipo_usuario_id, created_at, updated_at, deleted) VALUES
+(1, 'Claudia Torres',     'claudia.torres@empresa.cl', 2, '2025-05-12 10:00:00', '2025-05-12 10:00:00', 0),
+(2, 'Juan González',      'juan.gonzalez@empresa.cl',  3, '2025-05-15 09:30:00', '2025-05-15 09:30:00', 0),
+(3, 'Mario Vargas',       'mario.vargas@gmail.com',    2, '2025-03-20 12:00:00', '2025-03-20 12:00:00', 1),
+(4, 'Laura Torres',       'laura.t@otrocorreo.com',    4, '2025-01-25 15:00:00', '2025-02-01 15:30:00', 0),
+(5, 'Pedro Rojas',        'pedro@empresa.cl',          1, '2024-12-11 14:00:00', '2025-01-01 08:45:00', 0),
+(6, 'Marcela Paredes',    'marcela@empresa.cl',        2, '2025-05-04 11:00:00', '2025-05-04 11:30:00', 0),
+(7, 'Carlos Bravo',       'carlosb@empresa.cl',        3, '2025-04-29 16:00:00', '2025-04-30 10:00:00', 1),
+(8, 'Ana González',       'ana.gonzalez@correo.com',   4, '2025-05-02 10:00:00', '2025-05-02 10:15:00', 0),
+(9, 'Luis Torres',        'luis.torres@empresa.cl',    2, '2025-05-01 09:00:00', '2025-05-01 09:10:00', 0);
+
+
+-- Muestra los usuarios que tienen asignado el tipo de usuario "Administrador".
+SELECT u.* 
+FROM usuarios u
+JOIN tipo_usuarios tu ON u.tipo_usuario_id = tu.id;
+
+-- Muestra todos los usuarios que están activos, es decir, que no han sido marcados como eliminados (deleted = 0).
+SELECT * 
+FROM usuarios 
+WHERE deleted = 1;
+
+-- Inserta un nuevo usuario activo en la tabla 'usuarios'
+
+
+SELECT u.*
+FROM usuarios u
+JOIN tipo_usuarios tu ON u.tipo_usuario_id = tu.id
+WHERE tu.nombre_tipo = 'Administrador';
+
+SELECT nombre, created_at
+FROM usuarios
+WHERE created_at BETWEEN '2025-05-01' AND '2025-06-31';
+
+SELECT nombre, created_at
+FROM usuarios
+WHERE created_at BETWEEN '2025-05-01' AND '2025-06-15';
+
+	SELECT nombre, correo
+	FROM usuarios
+	WHERE deleted = 0 AND tipo_usuario_id = 2;
+
+SELECT nombre, created_at
+FROM usuarios
+WHERE deleted = 0 AND created_at BETWEEN '2025-05-01' AND '2025-05-31';
+
+SELECT nombre, correo
+FROM usuarios
+WHERE correo LIKE '%@empresa.cl';
+
+SELECT nombre, tipo_usuario_id, deleted
+FROM usuarios
+WHERE deleted = 1 AND (tipo_usuario_id = 3 OR tipo_usuario_id = 4);
+
+SELECT nombre, correo
+FROM usuarios
+WHERE nombre LIKE '%Torres%' OR nombre LIKE '%González%';
