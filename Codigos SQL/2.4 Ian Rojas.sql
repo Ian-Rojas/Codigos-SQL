@@ -1,5 +1,5 @@
-create database pene;
-use pene;
+create database ejemplo;
+use ejemplo;
 
 CREATE TABLE tipo_usuarios (
     id_tipo INT PRIMARY KEY AUTO_INCREMENT,
