@@ -17,17 +17,14 @@ Se incluyen también scripts para poblar las tablas con datos de ejemplo y consu
 
 ## Estructura
 
-- `script_creacion.sql`: Script con la creación de tablas, restricciones y datos iniciales.
-- `consultas.sql`: Consultas SQL con cláusulas WHERE para diversos filtros y búsquedas.
-- `erd.png`: Imagen del diagrama entidad-relación generado con MySQL Workbench.
-- `capturas/`: Carpeta con capturas de pantalla de las consultas ejecutadas.
+- `Tarea-1`: Script con la creación de tablas, restricciones y datos iniciales.
+- `Tarea-2`: Consultas SQL con cláusulas WHERE para diversos filtros y búsquedas.
+- `Tarea-3`: Script con las consultas.
 
 ## Cómo usar
 
-1. Ejecutar `script_creacion.sql` en MySQL para crear la base de datos y tablas, con restricciones y datos de ejemplo.
-2. Ejecutar `consultas.sql` para ver ejemplos de consultas con filtros específicos usando `WHERE`.
-3. Revisar `erd.png` para entender el diseño de la base de datos.
-4. Ver capturas para validar resultados.
+1. Ejecutar `Tarea-1.sql` en MySQL para crear la base de datos y tablas, con restricciones y datos de ejemplo.
+2. Ejecutar `Tarea-2.sql` para ver ejemplos de consultas con filtros específicos usando `WHERE`.
 
 ## Notas
 
